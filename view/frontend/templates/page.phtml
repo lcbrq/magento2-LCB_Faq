@@ -1,0 +1,20 @@
+<?php
+/**
+ * FAQ output page
+ *
+ * @var $block \LCB\Faq\Block\Index
+ */
+?>
+
+<?php $sets = $this->getQA(); ?>
+
+<?php if(!count($sets)): ?>
+<p><?php echo __("There are no items yet"); ?></p>
+<?php endif; ?>
+
+<?php foreach ($sets as $set): ?>
+
+    <h3><?php /* @escapeNotVerified */ echo $set->getQuestion(); ?></h3>
+    <p><?php /* @escapeNotVerified */ echo $set->getAnswer(); ?></p>
+
+<?php endforeach; ?>
