@@ -20,6 +20,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic {
      */
     protected $_systemStore;
     protected $_status;
+    protected $_categories;
 
     /**
      * @param \Magento\Backend\Block\Template\Context $context
@@ -27,16 +28,19 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic {
      * @param \Magento\Framework\Data\FormFactory $formFactory
      * @param \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig
      * @param \Magento\Store\Model\System\Store $systemStore
+     * @param \LCB\Faq\Model\Category $category
      * @param array $data
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context, 
         \Magento\Framework\Registry $registry, 
         \Magento\Framework\Data\FormFactory $formFactory, 
+        \LCB\Faq\Model\Category $category,
         \Magento\Store\Model\System\Store $systemStore, array $data = []
     )
     {
         $this->_systemStore = $systemStore;
+        $this->_categories = $category->getOptionArray();
         parent::__construct($context, $registry, $formFactory, $data);
     }
 
@@ -97,6 +101,19 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic {
                     'required' => true
                 ]
         );
+        
+        if($this->_categories){
+            $fieldset->addField(
+                    'category_id', 'select',
+                    [
+                        'name' => 'category_id',
+                        'label' => __('Category'),
+                        'title' => __('Category'),
+                        'required' => true,
+                        'values' => $this->_categories,
+                    ]
+            );
+        }
 
         $fieldset->addField(
                 'store_ids', 'multiselect',

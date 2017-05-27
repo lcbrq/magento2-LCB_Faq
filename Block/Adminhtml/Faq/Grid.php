@@ -26,12 +26,18 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended {
      * @var \LCB\Faq\Model\Status
      */
     protected $_status;
-
+    
+    /**
+     * @var array $_categories
+     */
+    protected $_categories;
+      
     /**
      * @param \Magento\Backend\Block\Template\Context $context
      * @param \Magento\Backend\Helper\Data $backendHelper
      * @param \LCB\Faq\Model\faqFactory $faqFactory
      * @param \LCB\Faq\Model\Status $status
+     * @param \LCB\Faq\Model\Category $category,
      * @param \Magento\Framework\Module\Manager $moduleManager
      * @param array $data
      *
@@ -40,14 +46,16 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended {
     public function __construct(
     \Magento\Backend\Block\Template\Context $context, 
     \Magento\Backend\Helper\Data $backendHelper, 
-    \LCB\Faq\Model\FaqFactory $FaqFactory, 
+    \LCB\Faq\Model\FaqFactory $FaqFactory,        
     \LCB\Faq\Model\Status $status, 
+    \LCB\Faq\Model\Category $category,          
     \Magento\Framework\Module\Manager $moduleManager, 
     array $data = []
     )
     {
         $this->_faqFactory = $FaqFactory;
         $this->_status = $status;
+        $this->_categories = $category->getOptionArray();
         $this->moduleManager = $moduleManager;
         parent::__construct($context, $backendHelper, $data);
     }
@@ -121,7 +129,20 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended {
                     'options' => ['1' => __('Enabled'), '0' => __('Disabled')]
                 ]
         );
+
+        if($this->_categories){
+            $this->addColumn(
+                     'category_id',
+                     [
+                         'header' => __('Category'),
+                         'index' => 'category_id',
+                         'type' => 'options',
+                         'options' => $this->_categories
+                     ]
+             );
+        }
         
+       
         /**
          * Check is single store mode
          */
