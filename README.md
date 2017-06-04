@@ -52,3 +52,7 @@ class Category {
 ### [1.0.1]
 
 Added plugin support for categories
+
+### [1.0.2]
+
+Fix for question and answer character limit
