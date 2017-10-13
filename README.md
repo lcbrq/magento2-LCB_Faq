@@ -56,3 +56,7 @@ Added plugin support for categories
 ### [1.0.2]
 
 Fix for question and answer character limit
+
+### [1.0.3]
+
+Code format and minor adjustments

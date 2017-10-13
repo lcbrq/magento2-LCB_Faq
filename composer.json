@@ -6,26 +6,18 @@
         "magento/framework": ">=100.0.0",
         "magento/magento-composer-installer": "*"
     },
-     "authors": [
+    "authors": [
         {
             "name": "Silpion Tomasz Gregorczyk",
             "email": "tom@lcbrq.com"
         }
     ],
     "type": "magento2-module",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": [
         "OSL"
     ],
-    "extra": {
-        "map": [
-            [
-                "*",
-                "LCB/Faq"
-            ]
-        ]
-    },
-      "autoload": {
+    "autoload": {
         "files": ["registration.php"],
         "psr-4": {
             "LCB\\Faq\\": ""
