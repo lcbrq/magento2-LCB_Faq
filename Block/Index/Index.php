@@ -51,7 +51,7 @@ class Index extends \Magento\Framework\View\Element\Template {
 
         if(strpos($currentUrl,'faq')!=false){
             $this->pageConfig->getTitle()->set('FAQ van Emile Bakker Auto\'s: wij houden van duidelijkheid!');
-            $this->pageConfig->setDescription('✓ Specialist in het importeren van nieuwe & jonge, gebruikte auto\'s uit de EU ✓ Page description: Meer dan 20 jaar ervaring ✓ Familiebedrijf ✓ Full service garage');
+            $this->pageConfig->setDescription('✓ Specialist in het importeren van nieuwe & jonge, gebruikte auto\'s uit de EU ✓ Meer dan 20 jaar ervaring ✓ Familiebedrijf ✓ Full service garage');
 
             if ($pageMainTitle && $pageMainTitle instanceof \Magento\Theme\Block\Html\Title) {
                 $pageMainTitle->setPageTitle('Veel gestelde vragen');
