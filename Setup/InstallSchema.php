@@ -52,11 +52,11 @@ class InstallSchema implements InstallSchemaInterface
             )->addColumn(
                 'store_ids', \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 255, [], 'Store Ids'
-            )
-                ->setComment(
+            )->setComment(
                     'Questions and Answers'
-                );
+            );
             $setup->getConnection()->createTable($table);
+            
         }
 
         $installer->endSetup();

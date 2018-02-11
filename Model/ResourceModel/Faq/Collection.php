@@ -2,7 +2,7 @@
 
 /**
  * Easy FAQ management
- *
+ * 
  * @category   LCB
  * @package    LCB_Faq
  * @author     Silpion Tomasz Gregorczyk <tom@leftcurlybracket.com>
@@ -20,7 +20,10 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected function _construct()
     {
-        $this->_init('LCB\Faq\Model\Faq', 'LCB\Faq\Model\ResourceModel\Faq');
+        $this->_init(
+            'LCB\Faq\Model\Faq',
+            'LCB\Faq\Model\ResourceModel\Faq'
+        );
     }
     
     /**
@@ -38,5 +41,5 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
             ]
         );
     }
-
+    
 }

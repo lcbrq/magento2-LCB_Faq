@@ -12,9 +12,12 @@ namespace LCB\Faq\Model;
 
 class Category extends \Magento\Framework\Model\AbstractModel {
 
-    public function getOptionArray()
+    /**
+     * @return void
+     */
+    protected function _construct()
     {
-        return array();
+        $this->_init('LCB\Faq\Model\ResourceModel\Category');
     }
     
 }

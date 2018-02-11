@@ -2,7 +2,7 @@
 
 /**
  * Easy FAQ management
- *
+ * 
  * @category   LCB
  * @package    LCB_Faq
  * @author     Silpion Tomasz Gregorczyk <tom@leftcurlybracket.com>
@@ -10,11 +10,10 @@
 
 namespace LCB\Faq\Model;
 
-class Faq extends \Magento\Framework\Model\AbstractModel {
+class Faq extends \Magento\Framework\Model\AbstractModel
+{
 
     /**
-     * Initialize resource model
-     *
      * @return void
      */
     protected function _construct()

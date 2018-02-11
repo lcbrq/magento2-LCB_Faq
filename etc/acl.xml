@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="LCB_Faq::menu" title="Blog" sortOrder="100">
+                        <resource id="LCB_Faq::faq" title="FAQ" sortOrder="10">
+                            <resource id="LCB_Faq::faq_save" sortOrder="10" title="Save set"/>
+                            <resource id="LCB_Faq::faq_delete" sortOrder="20" title="Delete set"/>
+                            <resource id="LCB_Faq::faq_update" sortOrder="30" title="Update set"/>
+                            <resource id="LCB_Faq::faq_view" sortOrder="40" title="View set"/>
+                        </resource>
+                        <resource id="LCB_Faq::category" title="Category" sortOrder="20" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
