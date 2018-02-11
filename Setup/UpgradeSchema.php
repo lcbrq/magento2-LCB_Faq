@@ -43,6 +43,29 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 ]);
         }
 
+        if (version_compare($context->getVersion(), '1.1.0') < 0) {
+            
+            $table = $setup->getConnection()->newTable(
+                $setup->getTable('lcb_faq_category')
+            )->addColumn(
+                'id', \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER, null,
+                ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
+                'Category Id'
+            )->addColumn(
+                'url', \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255, [], 'Category url'
+            )->addColumn(
+                'name', \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255, [], 'Category name'
+            )->addColumn(
+                'is_active', \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
+                1, [], 'Is enabled'
+            )->setComment(
+                    'FAQ Category'
+            );
+            $setup->getConnection()->createTable($table);
+            
+        }
 
         $setup->endSetup();
     }

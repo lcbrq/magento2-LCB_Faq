@@ -1,13 +1,8 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="LCB_Faq::faq" 
-             title="FAQ" 
-             module="LCB_Faq" 
-             sortOrder="100" 
-             action="faq/faq" 
-             parent="Magento_Backend::content_elements"
-             resource="Magento_Backend::content" />
+        <add id="LCB_Faq::menu" title="FAQ" module="LCB_Faq" parent="Magento_Backend::content" sortOrder="100"  resource="LCB_Faq::menu"/>
+        <add id="LCB_Faq::faq" title="FAQ" module="LCB_Faq" parent="LCB_Faq::menu" sortOrder="10" action="faq/faq" resource="LCB_Faq::faq"/>
+        <add id="LCB_Faq::category" title="Categories" module="LCB_Faq" parent="LCB_Faq::menu" sortOrder="10" action="faq/category" resource="LCB_Faq::category"/>
     </menu>
 </config>
-

@@ -21,7 +21,6 @@ class Index extends \Magento\Framework\View\Element\Template {
     protected $_categories;
 
     /**
-     * Index constructor.
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \LCB\Faq\Model\FaqFactory $faqFactory
      * @param \LCB\Faq\Model\Category $category
@@ -39,27 +38,8 @@ class Index extends \Magento\Framework\View\Element\Template {
         parent::__construct($context);
     }
 
-
-    /**
-     * @return mixed
-     * TODO: change strpos to something better
-     */
     protected function _prepareLayout()
     {
-        $currentUrl = $this->_urlBuilder->getCurrentUrl();
-        $pageMainTitle = $this->getLayout()->getBlock('page.main.title');
-
-        if(strpos($currentUrl,'faq')!=false){
-            $this->pageConfig->getTitle()->set('FAQ van Emile Bakker Auto\'s: wij houden van duidelijkheid!');
-            $this->pageConfig->setDescription('✓ Specialist in het importeren van nieuwe & jonge, gebruikte auto\'s uit de EU ✓ Meer dan 20 jaar ervaring ✓ Familiebedrijf ✓ Full service garage');
-
-            if ($pageMainTitle && $pageMainTitle instanceof \Magento\Theme\Block\Html\Title) {
-                $pageMainTitle->setPageTitle('Veel gestelde vragen');
-            }
-
-        }
-
-
         return parent::_prepareLayout();
     }
     
@@ -86,7 +66,7 @@ class Index extends \Magento\Framework\View\Element\Template {
     }
     
     /**
-     * Get questions ans answers by category id
+     * Get questions and answers by category id
      * 
      * @return LCB\Faq\Model\ResourceModel\Faq\Collection
      */
@@ -104,7 +84,7 @@ class Index extends \Magento\Framework\View\Element\Template {
      * @return array
      */
     public function getCategories(){
-        return $this->_categories->getOptionArray();
+        return $this->_categories->getCollection();
     }
 
 }

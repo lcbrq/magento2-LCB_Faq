@@ -34,8 +34,8 @@ class FaqFactory {
      */
     public function create(array $arguments = [])
     {
-        return $this->_objectManager->create('LCB\Faq\Model\Faq', $arguments,
-                        false);
+        return $this->_objectManager->create('LCB\Faq\Model\Faq', $arguments, false);
     }
     
 }
+

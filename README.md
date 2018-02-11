@@ -15,8 +15,7 @@ Visit FAQ page on /faq route
 
 ### Categories
 
-Currently category support can be providen only with plugin interaction  
-Sample usage  
+Sample extension  
 
 ```
 <?xml version="1.0"?>
@@ -60,3 +59,7 @@ Fix for question and answer character limit
 ### [1.0.3]
 
 Code format and minor adjustments
+
+### [1.1.0]
+
+Mayor refactor and add manageable categories
