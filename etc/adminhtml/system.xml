@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="lcb_faq" sortOrder="999" translate="label">
+            <label>LCB Faq</label>
+        </tab>
+        <section id="faq" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <label>Page settings</label>
+            <tab>lcb_faq</tab>
+            <resource>LCB_Faq::config_lcb_faq</resource>
+            <group id="page_options" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Options</label>
+                <field id="title" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+                    <label>Page title</label>
+                    <comment/>
+                </field>
+                <field id="meta_description" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="textarea">
+                    <label>Page meta description</label>
+                    <comment/>
+                </field>
+                <field id="meta_title" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+                    <label>Page meta title</label>
+                    <comment/>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
